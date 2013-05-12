@@ -51,6 +51,15 @@
         [mailViewController setSubject:@""];
         [mailViewController setSubject:@"Testing emailing function in app"];
         [mailViewController setMessageBody:@"How are you?" isHTML:NO];
+
+        NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString* dPath = [paths objectAtIndex:0];
+        NSString* txtfile = [dPath stringByAppendingPathComponent:@"EmailZipPractice.zip"];
+
+        NSURL *aURL = [NSURL fileURLWithPath:txtfile];
+        NSData *myData = [NSData dataWithContentsOfURL:aURL];
+        [mailViewController addAttachmentData:myData mimeType:@"application/zip" fileName:@"EmailZipPractice.zip"];
+
         [self presentViewController:mailViewController animated:YES completion:nil];
     }else {
         NSLog(@"Device is unable to send email in its current state.");
@@ -61,8 +70,8 @@
     
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* dPath = [paths objectAtIndex:0];
-    NSString* txtfile = [dPath stringByAppendingPathComponent:@"EmailZipPractice.sqlite.sqlite"];
-    NSString* zipfile = [dPath stringByAppendingPathComponent:@"EmailZipPractice.sqlite.zip"];
+    NSString* txtfile = [dPath stringByAppendingPathComponent:@"EmailZipPractice.sqlite"];
+    NSString* zipfile = [dPath stringByAppendingPathComponent:@"EmailZipPractice.zip"];
     ZipArchive* zip = [[ZipArchive alloc] init];
     BOOL ret = [zip CreateZipFile2:zipfile];
     ret = [zip addFileToZip:txtfile newname:@"EmailZipPractice.sqlite"];//zip
@@ -70,13 +79,33 @@
     {
         zipfile = @"";
     }
+    
     NSLog(@"The file has been zipped");
 
 
 }
-          
+
 -(void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Result: canceled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Result: saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Result: sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Result: failed");
+            break;
+        default:
+            NSLog(@"Result: not sent");
+            break;
+    }
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
