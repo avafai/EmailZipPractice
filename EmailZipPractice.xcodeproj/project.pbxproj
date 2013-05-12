@@ -18,6 +18,10 @@
 		34FD3403173F58E30095D8F1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34FD3402173F58E30095D8F1 /* Default@2x.png */; };
 		34FD3405173F58E30095D8F1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34FD3404173F58E30095D8F1 /* Default-568h@2x.png */; };
 		34FD3408173F58E30095D8F1 /* EmailZipPractice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34FD3406173F58E30095D8F1 /* EmailZipPractice.xcdatamodeld */; };
+		34FD3411173F59B60095D8F1 /* EmailContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD340F173F59B60095D8F1 /* EmailContent.m */; };
+		34FD3412173F59B60095D8F1 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34FD3410173F59B60095D8F1 /* HomePageViewController.xib */; };
+		34FD3414173F5B3C0095D8F1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FD3413173F5B3C0095D8F1 /* MessageUI.framework */; };
+		34FD3417173F6A010095D8F1 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD3416173F6A010095D8F1 /* Notes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,12 @@
 		34FD3402173F58E30095D8F1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		34FD3404173F58E30095D8F1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		34FD3407173F58E30095D8F1 /* EmailZipPractice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmailZipPractice.xcdatamodel; sourceTree = "<group>"; };
+		34FD340E173F59B60095D8F1 /* EmailContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailContent.h; sourceTree = "<group>"; };
+		34FD340F173F59B60095D8F1 /* EmailContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailContent.m; sourceTree = "<group>"; };
+		34FD3410173F59B60095D8F1 /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
+		34FD3413173F5B3C0095D8F1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		34FD3415173F6A010095D8F1 /* Notes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notes.h; sourceTree = "<group>"; };
+		34FD3416173F6A010095D8F1 /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34FD3414173F5B3C0095D8F1 /* MessageUI.framework in Frameworks */,
 				34FD33ED173F58E30095D8F1 /* UIKit.framework in Frameworks */,
 				34FD33EF173F58E30095D8F1 /* Foundation.framework in Frameworks */,
 				34FD33F1173F58E30095D8F1 /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +67,7 @@
 		34FD33E0173F58E20095D8F1 = {
 			isa = PBXGroup;
 			children = (
+				34FD3413173F5B3C0095D8F1 /* MessageUI.framework */,
 				34FD33F4173F58E30095D8F1 /* EmailZipPractice */,
 				34FD33EB173F58E20095D8F1 /* Frameworks */,
 				34FD33EA173F58E20095D8F1 /* Products */,
@@ -86,7 +98,12 @@
 			children = (
 				34FD33FD173F58E30095D8F1 /* AppDelegate.h */,
 				34FD33FE173F58E30095D8F1 /* AppDelegate.m */,
+				34FD340E173F59B60095D8F1 /* EmailContent.h */,
+				34FD340F173F59B60095D8F1 /* EmailContent.m */,
+				34FD3410173F59B60095D8F1 /* HomePageViewController.xib */,
 				34FD3406173F58E30095D8F1 /* EmailZipPractice.xcdatamodeld */,
+				34FD3415173F6A010095D8F1 /* Notes.h */,
+				34FD3416173F6A010095D8F1 /* Notes.m */,
 				34FD33F5173F58E30095D8F1 /* Supporting Files */,
 			);
 			path = EmailZipPractice;
@@ -161,6 +178,7 @@
 				34FD3401173F58E30095D8F1 /* Default.png in Resources */,
 				34FD3403173F58E30095D8F1 /* Default@2x.png in Resources */,
 				34FD3405173F58E30095D8F1 /* Default-568h@2x.png in Resources */,
+				34FD3412173F59B60095D8F1 /* HomePageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +192,8 @@
 				34FD33FB173F58E30095D8F1 /* main.m in Sources */,
 				34FD33FF173F58E30095D8F1 /* AppDelegate.m in Sources */,
 				34FD3408173F58E30095D8F1 /* EmailZipPractice.xcdatamodeld in Sources */,
+				34FD3411173F59B60095D8F1 /* EmailContent.m in Sources */,
+				34FD3417173F6A010095D8F1 /* Notes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
