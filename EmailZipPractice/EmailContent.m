@@ -56,6 +56,24 @@
         NSLog(@"Device is unable to send email in its current state.");
     }
 }
+
+- (IBAction)zipFileButton:(id)sender {
+    
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* dPath = [paths objectAtIndex:0];
+    NSString* txtfile = [dPath stringByAppendingPathComponent:@"EmailZipPractice.sqlite.sqlite"];
+    NSString* zipfile = [dPath stringByAppendingPathComponent:@"EmailZipPractice.sqlite.zip"];
+    ZipArchive* zip = [[ZipArchive alloc] init];
+    BOOL ret = [zip CreateZipFile2:zipfile];
+    ret = [zip addFileToZip:txtfile newname:@"EmailZipPractice.sqlite"];//zip
+    if( ![zip CloseZipFile2] )
+    {
+        zipfile = @"";
+    }
+    NSLog(@"The file has been zipped");
+
+
+}
           
 -(void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {

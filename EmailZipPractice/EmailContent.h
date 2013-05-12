@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *mainNote;
 
 - (IBAction) actionEmailComposer;
+- (IBAction) zipFileButton:(id)sender;
 
 @end

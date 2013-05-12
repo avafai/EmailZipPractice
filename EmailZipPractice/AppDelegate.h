@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EmailContent.h"
 #import "Notes.h"
+#import "ZipArchive.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
